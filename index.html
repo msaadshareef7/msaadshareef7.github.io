@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCanvas | Pro Portfolio</title>
+<title>CodeCanvas | Pro Portfolio (Fixed)</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 body{display:flex;background:#0f172a;color:white}
 
 /* SIDEBAR */
-.sidebar{width:240px;height:100vh;background:linear-gradient(180deg,#020617,#0f172a);padding:20px;position:fixed;left:0;transition:.3s}
+.sidebar{width:240px;height:100vh;background:linear-gradient(180deg,#020617,#0f172a);padding:20px;position:fixed;left:0;top:0;transition:.3s;z-index:999}
 .sidebar.hide{left:-240px}
 .sidebar h2{margin-bottom:20px;text-align:center;color:#00f2fe}
 .sidebar a{display:block;padding:12px;border-radius:8px;margin:5px 0;cursor:pointer}
 .sidebar a:hover,.sidebar a.active{background:#00f2fe;color:black}
 
-.menu-btn{position:fixed;top:15px;left:15px;background:#00f2fe;border:none;padding:10px;border-radius:8px;cursor:pointer}
+/* MENU BUTTON (FIXED) */
+.menu-btn{position:fixed;top:15px;left:15px;background:#00f2fe;border:none;padding:10px;border-radius:8px;cursor:pointer;z-index:1001}
 
 .main{margin-left:240px;padding:40px;width:100%;transition:.3s}
 .main.full{margin-left:0}
@@ -36,10 +37,8 @@ body{display:flex;background:#0f172a;color:white}
 
 button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00f2fe;color:black;cursor:pointer}
 
-/* GRID */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 
-/* SEARCH */
 .search{padding:12px;width:100%;border-radius:10px;border:none;margin:20px 0}
 
 /* DARK MODE */
@@ -47,11 +46,15 @@ button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00
 .light .card{background:white}
 .light .sidebar{background:#ddd}
 
-.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%}
+.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%;z-index:1001}
 
-/* ANIMATION */
 .fade{animation:fade .5s}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* COMMENT SECTION */
+.comment-box{margin-top:20px}
+.comment-box input{width:100%;padding:10px;border-radius:8px;border:none;margin-top:10px}
+.comment{background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;margin-top:10px}
 </style>
 </head>
 
@@ -75,7 +78,6 @@ button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00
 <h1>Hi, I'm Saad 👋</h1>
 <p>Frontend Developer | Student</p>
 </div>
-
 <input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
 <div id="homePosts" class="grid"></div>
 </div>
@@ -87,28 +89,31 @@ button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00
 <div id="blogPosts" class="grid"></div>
 </div>
 
-<!-- POST -->
+<!-- POST VIEW (COMMENT FIXED) -->
 <div id="postView" class="page fade">
 <button onclick="showPage(null,'home')">⬅ Back</button>
 <h2 id="postTitle"></h2>
 <img id="postImg">
 <p id="postContent"></p>
+
+<div class="comment-box">
+<h3>Comments</h3>
+<input id="commentInput" placeholder="Write a comment...">
+<button onclick="addComment()">Post</button>
+<div id="comments"></div>
+</div>
 </div>
 
 <!-- ABOUT -->
 <div id="about" class="page fade">
 <h2>About Me</h2>
-<div class="card">
-<p>I am a passionate developer building modern web apps.</p>
-</div>
+<div class="card">I am a passionate developer building modern web apps.</div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="page fade">
 <h2>Contact</h2>
-<div class="card">
-<p>Email: your@email.com</p>
-</div>
+<div class="card">Email: your@email.com</div>
 </div>
 
 </div>
@@ -140,7 +145,18 @@ function openPost(i){
 document.getElementById("postTitle").innerText=posts[i].title;
 document.getElementById("postContent").innerText=posts[i].content;
 document.getElementById("postImg").src=posts[i].img;
+document.getElementById("comments").innerHTML="";
 showPage(null,'postView');
+}
+
+function addComment(){
+let text=document.getElementById("commentInput").value;
+if(text==="") return;
+let div=document.createElement("div");
+div.className="comment";
+div.innerText=text;
+document.getElementById("comments").appendChild(div);
+document.getElementById("commentInput").value="";
 }
 
 function searchPosts(v){
