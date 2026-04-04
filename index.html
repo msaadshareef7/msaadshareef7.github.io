@@ -3,237 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CodeCanvas | Next-Level Student Portfolio</title>
+<title>CodeCanvas | Advanced Blog</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{display:flex;background:#0f172a;color:white;transition:.4s}
 
-body {
-  display: flex;
-  background: #0f172a;
-  color: white;
-  transition: 0.4s;
-}
+.sidebar{width:220px;height:100vh;background:rgba(255,255,255,0.05);backdrop-filter:blur(15px);padding-top:30px;position:fixed;left:0;transition:.3s}
+.sidebar.hide{left:-220px}
+.sidebar h2{text-align:center;margin-bottom:30px}
+.sidebar a{display:block;padding:12px;color:white;cursor:pointer}
+.sidebar a:hover,.sidebar a.active{background:rgba(0,255,255,0.2)}
 
-/* SIDEBAR */
-.sidebar {
-  width: 220px;
-  height: 100vh;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
-  padding-top: 30px;
-  position: fixed;
-}
+.menu-btn{position:fixed;top:10px;left:10px;background:#00f2fe;border:none;padding:10px;border-radius:6px;cursor:pointer}
 
-.sidebar h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
+.main{margin-left:220px;padding:40px;width:100%;transition:.3s}
+.main.full{margin-left:0}
 
-.sidebar a {
-  display: block;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
+.page{display:none}
+.page.active{display:block}
 
-.sidebar a:hover,
-.sidebar a.active {
-  background: rgba(0,255,255,0.2);
-}
+.card{background:rgba(255,255,255,0.08);padding:20px;margin:15px 0;border-radius:15px}
+.card img{width:100%;border-radius:10px;margin-top:10px}
 
-/* MAIN CONTENT */
-.main {
-  margin-left: 220px;
-  padding: 40px;
-  width: 100%;
-}
+button{margin-top:10px;padding:8px;border:none;border-radius:6px;cursor:pointer}
 
-/* PAGES */
-.page {
-  display: none;
-  animation: fade 0.5s ease;
-}
+.search{padding:10px;width:100%;border-radius:8px;margin:10px 0}
 
-.page.active {
-  display: block;
-}
-
-@keyframes fade {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  color: #00f2fe;
-}
-
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 15px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* BUTTON */
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-/* DARK/LIGHT */
-.light {
-  background: #f5f5f5;
-  color: black;
-}
-
-.light .sidebar {
-  background: rgba(0,0,0,0.1);
-}
-
-.light .card {
-  background: white;
-}
-
-/* TOGGLE */
-.toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #00f2fe;
-}
+.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe}
 </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-  <h2>🚀 CodeCanvas</h2>
-  <a onclick="showPage('home')" class="active">Home</a>
-  <a onclick="showPage('blog')">Blog</a>
-  <a onclick="showPage('about')">About</a>
-  <a onclick="showPage('contact')">Contact</a>
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<div class="sidebar" id="sidebar">
+<h2>🚀 CodeCanvas</h2>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('blog')">Blog</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('contact')">Contact</a>
 </div>
 
-<!-- MAIN -->
-<div class="main">
+<div class="main" id="main">
 
 <!-- HOME -->
 <div id="home" class="page active">
-  <div class="hero">
-    <h1 id="typing"></h1>
-    <p>Student Developer | Creative Thinker</p>
-  </div>
+<h1>Welcome 🚀</h1>
+<input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
+<div id="homePosts"></div>
 </div>
 
 <!-- BLOG -->
 <div id="blog" class="page">
-  <h2>Latest Posts</h2>
+<h2>All Posts</h2>
+<input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
+<div id="blogPosts"></div>
+</div>
 
-  <div class="card">
-    <h3>My First Blog</h3>
-    <p>This is my university blog project.</p>
-  </div>
+<!-- POST VIEW -->
+<div id="postView" class="page">
+<button onclick="showPage('home')">⬅ Back</button>
+<h2 id="postTitle"></h2>
+<img id="postImg" />
+<p id="postContent"></p>
 
-  <div class="card">
-    <h3>Learning Web Dev</h3>
-    <p>Exploring modern UI and GitHub Pages.</p>
-  </div>
+<h3>Comments</h3>
+<input id="commentInput" placeholder="Write comment...">
+<button onclick="addComment()">Post</button>
+<div id="comments"></div>
 </div>
 
 <!-- ABOUT -->
 <div id="about" class="page">
-  <h2>About Me</h2>
-
-  <div class="card">
-    <p>I am a student building modern web apps.</p>
-
-    <button onclick="toggleHobbies()">Show Hobbies</button>
-
-    <div id="hobbies" style="display:none;">
-      <h3>My Hobbies</h3>
-      <ul>
-        <li>Coding 💻</li>
-        <li>Gaming 🎮</li>
-        <li>Reading 📚</li>
-      </ul>
-    </div>
-
-  </div>
+<h2>About</h2>
+<div class="card">I am a student developer.</div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="page">
-  <h2>Contact</h2>
-
-  <div class="card">
-    <p>Email: your@email.com</p>
-  </div>
+<h2>Contact</h2>
+<div class="card">Email: your@email.com</div>
 </div>
 
 </div>
 
-<!-- TOGGLE -->
 <button class="toggle" onclick="toggleMode()">🌙</button>
 
 <script>
-/* PAGE SWITCH */
-function showPage(pageId) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
+let currentPostIndex = 0;
 
-  document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
-  event.target.classList.add('active');
+const posts = [
+{
+title:"My First Blog",
+desc:"This is my university blog project.",
+content:"Full details of my first blog post...",
+img:"https://via.placeholder.com/600x300"
+},
+{
+title:"Learning Web Dev",
+desc:"Exploring modern UI.",
+content:"Full content about learning web development...",
+img:"https://via.placeholder.com/600x300"
+}
+];
+
+function renderPosts(list=posts){
+let home="";
+let blog="";
+
+list.forEach((p,i)=>{
+let card=`<div class="card">
+<h3>${p.title}</h3>
+<p>${p.desc}</p>
+<img src="${p.img}">
+<button onclick="openPost(${i})">Read More</button>
+</div>`;
+
+home+=card;
+blog+=card;
+});
+
+document.getElementById("homePosts").innerHTML=home;
+document.getElementById("blogPosts").innerHTML=blog;
 }
 
-/* DARK MODE */
-function toggleMode() {
-  document.body.classList.toggle("light");
+function openPost(i){
+currentPostIndex=i;
+document.getElementById("postTitle").innerText=posts[i].title;
+document.getElementById("postContent").innerText=posts[i].content;
+document.getElementById("postImg").src=posts[i].img;
+document.getElementById("comments").innerHTML="";
+showPage('postView');
 }
 
-/* HOBBIES */
-function toggleHobbies() {
-  let h = document.getElementById("hobbies");
-  h.style.display = h.style.display === "none" ? "block" : "none";
+function addComment(){
+let text=document.getElementById("commentInput").value;
+if(text==="") return;
+let div=document.createElement("div");
+div.className="card";
+div.innerText=text;
+document.getElementById("comments").appendChild(div);
+document.getElementById("commentInput").value="";
 }
 
-/* TYPING EFFECT */
-const text = "Welcome to CodeCanvas 🚀";
-let i = 0;
-
-function typing() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typing, 50);
-  }
+function searchPosts(value){
+let filtered=posts.filter(p=>p.title.toLowerCase().includes(value.toLowerCase()));
+renderPosts(filtered);
 }
 
-typing();
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+function toggleSidebar(){
+document.getElementById("sidebar").classList.toggle("hide");
+document.getElementById("main").classList.toggle("full");
+}
+
+renderPosts();
 </script>
 
 </body>
