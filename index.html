@@ -1,106 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Blog</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Blog</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    /* Navbar */
-    nav {
-      background: #333;
-      padding: 10px;
-    }
+body {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+  scroll-behavior: smooth;
+  transition: 0.3s;
+}
 
-    nav a {
-      color: white;
-      margin: 10px;
-      text-decoration: none;
-    }
+/* NAVBAR */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  z-index: 1000;
+}
 
-    /* Sections */
-    section {
-      padding: 20px;
-    }
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    /* Cards */
-    .card {
-      border: 1px solid #ddd;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-    }
+nav a:hover {
+  color: #00f2fe;
+}
 
-    /* Dark Mode */
-    .dark {
-      background: #121212;
-      color: white;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
 
-    button {
-      margin: 10px;
-      padding: 8px;
-    }
-  </style>
+.hero h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  opacity: 0.8;
+}
+
+/* SECTION */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* GLASS CARDS */
+.card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(20px);
+  transition: 0.4s;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0,255,255,0.3);
+}
+
+/* DARK MODE */
+.dark {
+  background: #0f0f0f;
+}
+
+.dark nav {
+  background: rgba(0,0,0,0.7);
+}
+
+/* BUTTON */
+.toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00f2fe;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav>
   <a href="#home">Home</a>
+  <a href="#blog">Blog</a>
   <a href="#about">About</a>
   <a href="#hobbies">Hobbies</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
+<!-- HERO -->
+<div class="hero" id="home">
+  <h1>My Premium Blog 🚀</h1>
+  <p>University Project | Modern UI Experience</p>
+</div>
 
-<!-- HOME -->
-<section id="home">
-  <h1>Welcome to My Blog 🎓</h1>
+<!-- BLOG -->
+<section id="blog">
+  <h2>Latest Posts</h2>
 
-  <div class="card">
-    <h3>My First Blog Post</h3>
-    <p>This is my university project blog post.</p>
+  <div class="card reveal">
+    <h3>My First Blog</h3>
+    <p>This is a modern blog UI with animations.</p>
   </div>
 
-  <div class="card">
-    <h3>Another Post</h3>
-    <p>More content coming soon...</p>
+  <div class="card reveal">
+    <h3>Learning Web Development</h3>
+    <p>Exploring HTML, CSS, and GitHub Pages.</p>
   </div>
+
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h1>About Me</h1>
-  <p>I am a university student creating this blog project.</p>
+  <h2>About Me</h2>
+  <div class="card reveal">
+    <p>I am a university student building modern web experiences.</p>
+  </div>
 </section>
 
 <!-- HOBBIES -->
 <section id="hobbies">
-  <h1>My Hobbies</h1>
-  <ul>
-    <li>Coding 💻</li>
-    <li>Gaming 🎮</li>
-    <li>Reading 📚</li>
-  </ul>
+  <h2>My Hobbies</h2>
+  <div class="card reveal">
+    <ul>
+      <li>Coding 💻</li>
+      <li>Gaming 🎮</li>
+      <li>Reading 📚</li>
+    </ul>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h1>Contact Me</h1>
-  <p>Email: your@email.com</p>
+  <h2>Contact Me</h2>
+  <div class="card reveal">
+    <p>Email: your@email.com</p>
+  </div>
 </section>
+
+<!-- DARK MODE -->
+<button class="toggle" onclick="toggleDark()">🌙</button>
 
 <script>
 function toggleDark() {
   document.body.classList.toggle("dark");
 }
+
+/* SCROLL REVEAL */
+function reveal() {
+  let reveals = document.querySelectorAll(".reveal");
+
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
 </script>
 
 </body>
