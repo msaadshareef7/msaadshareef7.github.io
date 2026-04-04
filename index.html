@@ -1,17 +1,107 @@
----
-layout: default
-title: "Home"
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
 
-{% if site.show_excerpts %}
-  {% for post in site.posts %}
-    <article>
-      {% include meta.html post=post %}
-      {{ post.excerpt }}
-      <footer class="button"><a href="{{ post.url | relative_url }}">read more</a></footer>
-    </article>
-  {% endfor %}
-{% else %}
-  {% capture source %}{% include_relative archive.html title="Posts" %}{% endcapture %}
-  {{ source | split: "---" | last }}
-{% endif %}
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+    }
+
+    /* Navbar */
+    nav {
+      background: #333;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 20px;
+    }
+
+    /* Cards */
+    .card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    /* Dark Mode */
+    .dark {
+      background: #121212;
+      color: white;
+    }
+
+    button {
+      margin: 10px;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#hobbies">Hobbies</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<button onclick="toggleDark()">🌙 Toggle Dark Mode</button>
+
+<!-- HOME -->
+<section id="home">
+  <h1>Welcome to My Blog 🎓</h1>
+
+  <div class="card">
+    <h3>My First Blog Post</h3>
+    <p>This is my university project blog post.</p>
+  </div>
+
+  <div class="card">
+    <h3>Another Post</h3>
+    <p>More content coming soon...</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h1>About Me</h1>
+  <p>I am a university student creating this blog project.</p>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+  <h1>My Hobbies</h1>
+  <ul>
+    <li>Coding 💻</li>
+    <li>Gaming 🎮</li>
+    <li>Reading 📚</li>
+  </ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h1>Contact Me</h1>
+  <p>Email: your@email.com</p>
+</section>
+
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
