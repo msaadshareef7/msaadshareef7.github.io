@@ -3,58 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCanvas | Pro Portfolio (Fixed)</title>
+<title>CodeCanvas | My University Journey</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 body{display:flex;background:#0f172a;color:white}
 
-/* SIDEBAR */
-.sidebar{width:240px;height:100vh;background:linear-gradient(180deg,#020617,#0f172a);padding:20px;position:fixed;left:0;top:0;transition:.3s;z-index:999}
+.sidebar{width:240px;height:100vh;background:#020617;padding:20px;position:fixed;left:0;top:0;transition:.3s}
 .sidebar.hide{left:-240px}
-.sidebar h2{margin-bottom:20px;text-align:center;color:#00f2fe}
-.sidebar a{display:block;padding:12px;border-radius:8px;margin:5px 0;cursor:pointer}
+.sidebar h2{text-align:center;color:#00f2fe;margin-bottom:20px}
+.sidebar a{display:block;padding:10px;border-radius:8px;margin:5px 0;cursor:pointer}
 .sidebar a:hover,.sidebar a.active{background:#00f2fe;color:black}
 
-/* MENU BUTTON (FIXED) */
-.menu-btn{position:fixed;top:15px;left:15px;background:#00f2fe;border:none;padding:10px;border-radius:8px;cursor:pointer;z-index:1001}
+.menu-btn{position:fixed;top:10px;left:10px;background:#00f2fe;border:none;padding:10px;border-radius:6px;cursor:pointer;z-index:1000}
 
-.main{margin-left:240px;padding:40px;width:100%;transition:.3s}
+.main{margin-left:240px;padding:30px;width:100%;transition:.3s}
 .main.full{margin-left:0}
 
 .page{display:none}
 .page.active{display:block}
 
-/* HERO */
-.hero{padding:60px;text-align:center}
-.hero h1{font-size:3rem;background:linear-gradient(90deg,#00f2fe,#4facfe);-webkit-background-clip:text;color:transparent}
-.hero p{opacity:.7}
-
-/* CARD */
-.card{background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;margin:20px 0;transition:.3s;box-shadow:0 10px 20px rgba(0,0,0,0.3)}
-.card:hover{transform:translateY(-8px)}
+.card{background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;margin:20px 0}
 .card img{width:100%;border-radius:10px;margin-top:10px}
 
-button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00f2fe;color:black;cursor:pointer}
+button{margin-top:10px;padding:10px;border:none;border-radius:6px;background:#00f2fe;color:black;cursor:pointer}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%}
 
-.search{padding:12px;width:100%;border-radius:10px;border:none;margin:20px 0}
-
-/* DARK MODE */
 .light{background:#f5f5f5;color:black}
 .light .card{background:white}
 .light .sidebar{background:#ddd}
-
-.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%;z-index:1001}
-
-.fade{animation:fade .5s}
-@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-
-/* COMMENT SECTION */
-.comment-box{margin-top:20px}
-.comment-box input{width:100%;padding:10px;border-radius:8px;border:none;margin-top:10px}
-.comment{background:rgba(255,255,255,0.08);padding:10px;border-radius:8px;margin-top:10px}
 </style>
 </head>
 
@@ -65,55 +43,85 @@ button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00
 <div class="sidebar" id="sidebar">
 <h2>🚀 CodeCanvas</h2>
 <a onclick="showPage(event,'home')" class="active">Home</a>
-<a onclick="showPage(event,'blog')">Blog</a>
-<a onclick="showPage(event,'about')">About</a>
-<a onclick="showPage(event,'contact')">Contact</a>
+<a onclick="showPage(event,'post')">My Journey</a>
 </div>
 
 <div class="main" id="main">
 
 <!-- HOME -->
-<div id="home" class="page active fade">
-<div class="hero">
-<h1>Hi, I'm Saad 👋</h1>
-<p>Frontend Developer | Student</p>
+<div id="home" class="page active">
+<h1>Welcome 👋</h1>
+<div class="card">
+<h2>My University Journey</h2>
+<p>Click below to read my full journey...</p>
+<button onclick="showPage(null,'post')">Read Full Story</button>
 </div>
-<input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
-<div id="homePosts" class="grid"></div>
-</div>
-
-<!-- BLOG -->
-<div id="blog" class="page fade">
-<h2>All Posts</h2>
-<input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
-<div id="blogPosts" class="grid"></div>
 </div>
 
-<!-- POST VIEW (COMMENT FIXED) -->
-<div id="postView" class="page fade">
+<!-- FULL POST -->
+<div id="post" class="page">
 <button onclick="showPage(null,'home')">⬅ Back</button>
-<h2 id="postTitle"></h2>
-<img id="postImg">
-<p id="postContent"></p>
 
-<div class="comment-box">
-<h3>Comments</h3>
-<input id="commentInput" placeholder="Write a comment...">
-<button onclick="addComment()">Post</button>
-<div id="comments"></div>
-</div>
+<div class="card">
+<h2>1. First Day of University</h2>
+<p>I got admission in UET Lahore Faisalabad Campus in Computer Engineering (first batch). I had big dreams and excitement. Teachers were supportive and guided us well.</p>
+<img src="https://source.unsplash.com/800x400/?university,students">
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="page fade">
-<h2>About Me</h2>
-<div class="card">I am a passionate developer building modern web apps.</div>
+<div class="card">
+<h2>2. Hostel Life</h2>
+<p>I lived in a hall with 17 students. Initially interaction was low. My best hostel friend is Usman Ali and also Fakhar Abbas. Mess food and routine were challenging.</p>
+<img src="https://source.unsplash.com/800x400/?hostel,students">
 </div>
 
-<!-- CONTACT -->
-<div id="contact" class="page fade">
-<h2>Contact</h2>
-<div class="card">Email: your@email.com</div>
+<div class="card">
+<h2>3. First Week Experience</h2>
+<p>Started lectures and labs. Made friends Fakhar Abbas, Ahmad Raza and Adil Hassan. Group study helped a lot.</p>
+<img src="https://source.unsplash.com/800x400/?friends,study">
+</div>
+
+<div class="card">
+<h2>4. Mid Exams</h2>
+<p>No free days between exams. Each paper was 90 minutes. Programming and Calculus were easy and I scored full marks.</p>
+<img src="https://source.unsplash.com/800x400/?exam,students">
+</div>
+
+<div class="card">
+<h2>5. After Mids</h2>
+<p>Weekly assignments, quizzes and lab work (AICT, Physics). Spent 3 hours in labs and improved skills.</p>
+<img src="https://source.unsplash.com/800x400/?lab,students">
+</div>
+
+<div class="card">
+<h2>6. Sports</h2>
+<p>I prefer indoor games, especially chess. Participated in departmental competition and got good scores.</p>
+<img src="https://source.unsplash.com/800x400/?chess,game">
+</div>
+
+<div class="card">
+<h2>7. Machine Learning Project</h2>
+<p>Created loan approval ML model using Python. Used features like salary, loan history. Presented successfully.</p>
+<img src="https://source.unsplash.com/800x400/?machine-learning,code">
+</div>
+
+<div class="card">
+<h2>8. Final Exams</h2>
+<p>Got 1st position in whole department with 3.941 GPA. Enjoyed 15 days holidays.</p>
+<img src="https://source.unsplash.com/800x400/?success,student">
+</div>
+
+<div class="card">
+<h2>9. Second Semester</h2>
+<p>Subjects: OOP (C#), DBMS, DLD, Calculus II. Learned programming and databases. Friends include Usman Ali.</p>
+<img src="https://source.unsplash.com/800x400/?programming,students">
+</div>
+
+<div class="card">
+<h2>10. Online Classes</h2>
+<p>Due to petrol issues classes shifted online. Faced challenges but now returned for mid exams.</p>
+<img src="https://source.unsplash.com/800x400/?online,study">
+</div>
+
 </div>
 
 </div>
@@ -121,49 +129,6 @@ button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00
 <button class="toggle" onclick="toggleMode()">🌙</button>
 
 <script>
-const posts=[
-{title:"My First Blog",desc:"University project.",content:"Full blog content here...",img:"https://via.placeholder.com/600"},
-{title:"Learning Web Dev",desc:"Modern UI journey.",content:"Learning HTML CSS JS...",img:"https://via.placeholder.com/600"}
-];
-
-function renderPosts(list=posts){
-let home="",blog="";
-list.forEach((p,i)=>{
-let card=`<div class="card fade">
-<h3>${p.title}</h3>
-<p>${p.desc}</p>
-<img src="${p.img}">
-<button onclick="openPost(${i})">Read More</button>
-</div>`;
-home+=card;blog+=card;
-});
-document.getElementById("homePosts").innerHTML=home;
-document.getElementById("blogPosts").innerHTML=blog;
-}
-
-function openPost(i){
-document.getElementById("postTitle").innerText=posts[i].title;
-document.getElementById("postContent").innerText=posts[i].content;
-document.getElementById("postImg").src=posts[i].img;
-document.getElementById("comments").innerHTML="";
-showPage(null,'postView');
-}
-
-function addComment(){
-let text=document.getElementById("commentInput").value;
-if(text==="") return;
-let div=document.createElement("div");
-div.className="comment";
-div.innerText=text;
-document.getElementById("comments").appendChild(div);
-document.getElementById("commentInput").value="";
-}
-
-function searchPosts(v){
-let f=posts.filter(p=>p.title.toLowerCase().includes(v.toLowerCase()));
-renderPosts(f);
-}
-
 function showPage(e,id){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById(id).classList.add('active');
@@ -172,8 +137,6 @@ if(e){document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('act
 
 function toggleMode(){document.body.classList.toggle("light")}
 function toggleSidebar(){document.getElementById("sidebar").classList.toggle("hide");document.getElementById("main").classList.toggle("full")}
-
-renderPosts();
 </script>
 
 </body>
