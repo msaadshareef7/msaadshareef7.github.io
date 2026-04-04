@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Blog</title>
+
+<title>CodeCanvas | Next-Level Student Portfolio</title>
 
 <style>
 * {
@@ -14,198 +15,225 @@
 }
 
 body {
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
-  color: white;
-  scroll-behavior: smooth;
-  transition: 0.3s;
-}
-
-/* NAVBAR */
-nav {
-  position: fixed;
-  width: 100%;
   display: flex;
-  justify-content: center;
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.1);
-  padding: 15px;
-  z-index: 1000;
+  background: #0f172a;
+  color: white;
+  transition: 0.4s;
 }
 
-nav a {
-  margin: 0 15px;
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  padding-top: 30px;
+  position: fixed;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px;
   color: white;
   text-decoration: none;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #00f2fe;
+.sidebar a:hover,
+.sidebar a.active {
+  background: rgba(0,255,255,0.2);
+}
+
+/* MAIN CONTENT */
+.main {
+  margin-left: 220px;
+  padding: 40px;
+  width: 100%;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  animation: fade 0.5s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   text-align: center;
+  padding: 80px 20px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  background: linear-gradient(90deg, #00f2fe, #4facfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+  color: #00f2fe;
 }
 
-.hero p {
-  opacity: 0.8;
-}
-
-/* SECTION */
-section {
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* GLASS CARDS */
+/* CARDS */
 .card {
-  background: rgba(255,255,255,0.1);
-  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
   padding: 20px;
-  margin: 20px 0;
-  backdrop-filter: blur(20px);
-  transition: 0.4s;
-  border: 1px solid rgba(255,255,255,0.2);
+  margin: 15px 0;
+  border-radius: 15px;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 0 25px rgba(0,255,255,0.3);
-}
-
-/* DARK MODE */
-.dark {
-  background: #0f0f0f;
-}
-
-.dark nav {
-  background: rgba(0,0,0,0.7);
+  transform: translateY(-5px);
 }
 
 /* BUTTON */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* DARK/LIGHT */
+.light {
+  background: #f5f5f5;
+  color: black;
+}
+
+.light .sidebar {
+  background: rgba(0,0,0,0.1);
+}
+
+.light .card {
+  background: white;
+}
+
+/* TOGGLE */
 .toggle {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #00f2fe;
-  border: none;
-  padding: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* SCROLL ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <a href="#home">Home</a>
-  <a href="#blog">Blog</a>
-  <a href="#about">About</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#contact">Contact</a>
-</nav>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>🚀 CodeCanvas</h2>
+  <a onclick="showPage('home')" class="active">Home</a>
+  <a onclick="showPage('blog')">Blog</a>
+  <a onclick="showPage('about')">About</a>
+  <a onclick="showPage('contact')">Contact</a>
+</div>
 
-<!-- HERO -->
-<div class="hero" id="home">
-  <h1>My Premium Blog 🚀</h1>
-  <p>University Project | Modern UI Experience</p>
+<!-- MAIN -->
+<div class="main">
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <h1 id="typing"></h1>
+    <p>Student Developer | Creative Thinker</p>
+  </div>
 </div>
 
 <!-- BLOG -->
-<section id="blog">
+<div id="blog" class="page">
   <h2>Latest Posts</h2>
 
-  <div class="card reveal">
+  <div class="card">
     <h3>My First Blog</h3>
-    <p>This is a modern blog UI with animations.</p>
+    <p>This is my university blog project.</p>
   </div>
 
-  <div class="card reveal">
-    <h3>Learning Web Development</h3>
-    <p>Exploring HTML, CSS, and GitHub Pages.</p>
+  <div class="card">
+    <h3>Learning Web Dev</h3>
+    <p>Exploring modern UI and GitHub Pages.</p>
   </div>
-
-</section>
+</div>
 
 <!-- ABOUT -->
-<section id="about">
+<div id="about" class="page">
   <h2>About Me</h2>
-  <div class="card reveal">
-    <p>I am a university student building modern web experiences.</p>
-  </div>
-</section>
 
-<!-- HOBBIES -->
-<section id="hobbies">
-  <h2>My Hobbies</h2>
-  <div class="card reveal">
-    <ul>
-      <li>Coding 💻</li>
-      <li>Gaming 🎮</li>
-      <li>Reading 📚</li>
-    </ul>
+  <div class="card">
+    <p>I am a student building modern web apps.</p>
+
+    <button onclick="toggleHobbies()">Show Hobbies</button>
+
+    <div id="hobbies" style="display:none;">
+      <h3>My Hobbies</h3>
+      <ul>
+        <li>Coding 💻</li>
+        <li>Gaming 🎮</li>
+        <li>Reading 📚</li>
+      </ul>
+    </div>
+
   </div>
-</section>
+</div>
 
 <!-- CONTACT -->
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="card reveal">
+<div id="contact" class="page">
+  <h2>Contact</h2>
+
+  <div class="card">
     <p>Email: your@email.com</p>
   </div>
-</section>
+</div>
 
-<!-- DARK MODE -->
-<button class="toggle" onclick="toggleDark()">🌙</button>
+</div>
+
+<!-- TOGGLE -->
+<button class="toggle" onclick="toggleMode()">🌙</button>
 
 <script>
-function toggleDark() {
-  document.body.classList.toggle("dark");
+/* PAGE SWITCH */
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+
+  document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
 }
 
-/* SCROLL REVEAL */
-function reveal() {
-  let reveals = document.querySelectorAll(".reveal");
+/* DARK MODE */
+function toggleMode() {
+  document.body.classList.toggle("light");
+}
 
-  for (let i = 0; i < reveals.length; i++) {
-    let windowHeight = window.innerHeight;
-    let elementTop = reveals[i].getBoundingClientRect().top;
+/* HOBBIES */
+function toggleHobbies() {
+  let h = document.getElementById("hobbies");
+  h.style.display = h.style.display === "none" ? "block" : "none";
+}
 
-    if (elementTop < windowHeight - 100) {
-      reveals[i].classList.add("active");
-    }
+/* TYPING EFFECT */
+const text = "Welcome to CodeCanvas 🚀";
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 50);
   }
 }
 
-window.addEventListener("scroll", reveal);
+typing();
 </script>
 
 </body>
