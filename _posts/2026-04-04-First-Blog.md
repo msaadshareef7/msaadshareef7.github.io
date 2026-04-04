@@ -18,8 +18,10 @@ I created this website using **GitHub Pages** and Jekyll.
 
 - Study tips  
 - Programming tutorials  
-- My projects  
-
+- My projects
+- 
+  ![Desktop View](/assests/img/image.jpg)
+  
 ---
 
 ## 💡 Final Words
