@@ -12,6 +12,9 @@ This is my first blog post on my website.
 
 I created this website using **GitHub Pages** and Jekyll.
 
+  ![Desktop View](/assests/img/image.jpg)
+
+
 ---
 
 ## 📚 What I’ll Share Here
@@ -20,7 +23,6 @@ I created this website using **GitHub Pages** and Jekyll.
 - Programming tutorials  
 - My projects
 - 
-  ![Desktop View](/assests/img/image.jpg)
   
 ---
 
