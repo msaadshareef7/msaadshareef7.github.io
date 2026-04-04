@@ -3,34 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCanvas | Advanced Blog</title>
+<title>CodeCanvas | Pro Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{display:flex;background:#0f172a;color:white;transition:.4s}
+body{display:flex;background:#0f172a;color:white}
 
-.sidebar{width:220px;height:100vh;background:rgba(255,255,255,0.05);backdrop-filter:blur(15px);padding-top:30px;position:fixed;left:0;transition:.3s}
-.sidebar.hide{left:-220px}
-.sidebar h2{text-align:center;margin-bottom:30px}
-.sidebar a{display:block;padding:12px;color:white;cursor:pointer}
-.sidebar a:hover,.sidebar a.active{background:rgba(0,255,255,0.2)}
+/* SIDEBAR */
+.sidebar{width:240px;height:100vh;background:linear-gradient(180deg,#020617,#0f172a);padding:20px;position:fixed;left:0;transition:.3s}
+.sidebar.hide{left:-240px}
+.sidebar h2{margin-bottom:20px;text-align:center;color:#00f2fe}
+.sidebar a{display:block;padding:12px;border-radius:8px;margin:5px 0;cursor:pointer}
+.sidebar a:hover,.sidebar a.active{background:#00f2fe;color:black}
 
-.menu-btn{position:fixed;top:10px;left:10px;background:#00f2fe;border:none;padding:10px;border-radius:6px;cursor:pointer}
+.menu-btn{position:fixed;top:15px;left:15px;background:#00f2fe;border:none;padding:10px;border-radius:8px;cursor:pointer}
 
-.main{margin-left:220px;padding:40px;width:100%;transition:.3s}
+.main{margin-left:240px;padding:40px;width:100%;transition:.3s}
 .main.full{margin-left:0}
 
 .page{display:none}
 .page.active{display:block}
 
-.card{background:rgba(255,255,255,0.08);padding:20px;margin:15px 0;border-radius:15px}
+/* HERO */
+.hero{padding:60px;text-align:center}
+.hero h1{font-size:3rem;background:linear-gradient(90deg,#00f2fe,#4facfe);-webkit-background-clip:text;color:transparent}
+.hero p{opacity:.7}
+
+/* CARD */
+.card{background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;margin:20px 0;transition:.3s;box-shadow:0 10px 20px rgba(0,0,0,0.3)}
+.card:hover{transform:translateY(-8px)}
 .card img{width:100%;border-radius:10px;margin-top:10px}
 
-button{margin-top:10px;padding:8px;border:none;border-radius:6px;cursor:pointer}
+button{margin-top:10px;padding:10px;border:none;border-radius:8px;background:#00f2fe;color:black;cursor:pointer}
 
-.search{padding:10px;width:100%;border-radius:8px;margin:10px 0}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
 
-.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe}
+/* SEARCH */
+.search{padding:12px;width:100%;border-radius:10px;border:none;margin:20px 0}
+
+/* DARK MODE */
+.light{background:#f5f5f5;color:black}
+.light .card{background:white}
+.light .sidebar{background:#ddd}
+
+.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%}
+
+/* ANIMATION */
+.fade{animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 
@@ -40,51 +61,54 @@ button{margin-top:10px;padding:8px;border:none;border-radius:6px;cursor:pointer}
 
 <div class="sidebar" id="sidebar">
 <h2>🚀 CodeCanvas</h2>
-<a onclick="showPage('home')">Home</a>
-<a onclick="showPage('blog')">Blog</a>
-<a onclick="showPage('about')">About</a>
-<a onclick="showPage('contact')">Contact</a>
+<a onclick="showPage(event,'home')" class="active">Home</a>
+<a onclick="showPage(event,'blog')">Blog</a>
+<a onclick="showPage(event,'about')">About</a>
+<a onclick="showPage(event,'contact')">Contact</a>
 </div>
 
 <div class="main" id="main">
 
 <!-- HOME -->
-<div id="home" class="page active">
-<h1>Welcome 🚀</h1>
+<div id="home" class="page active fade">
+<div class="hero">
+<h1>Hi, I'm Saad 👋</h1>
+<p>Frontend Developer | Student</p>
+</div>
+
 <input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
-<div id="homePosts"></div>
+<div id="homePosts" class="grid"></div>
 </div>
 
 <!-- BLOG -->
-<div id="blog" class="page">
+<div id="blog" class="page fade">
 <h2>All Posts</h2>
 <input class="search" placeholder="Search posts..." onkeyup="searchPosts(this.value)">
-<div id="blogPosts"></div>
+<div id="blogPosts" class="grid"></div>
 </div>
 
-<!-- POST VIEW -->
-<div id="postView" class="page">
-<button onclick="showPage('home')">⬅ Back</button>
+<!-- POST -->
+<div id="postView" class="page fade">
+<button onclick="showPage(null,'home')">⬅ Back</button>
 <h2 id="postTitle"></h2>
-<img id="postImg" />
+<img id="postImg">
 <p id="postContent"></p>
-
-<h3>Comments</h3>
-<input id="commentInput" placeholder="Write comment...">
-<button onclick="addComment()">Post</button>
-<div id="comments"></div>
 </div>
 
 <!-- ABOUT -->
-<div id="about" class="page">
-<h2>About</h2>
-<div class="card">I am a student developer.</div>
+<div id="about" class="page fade">
+<h2>About Me</h2>
+<div class="card">
+<p>I am a passionate developer building modern web apps.</p>
+</div>
 </div>
 
 <!-- CONTACT -->
-<div id="contact" class="page">
+<div id="contact" class="page fade">
 <h2>Contact</h2>
-<div class="card">Email: your@email.com</div>
+<div class="card">
+<p>Email: your@email.com</p>
+</div>
 </div>
 
 </div>
@@ -92,80 +116,46 @@ button{margin-top:10px;padding:8px;border:none;border-radius:6px;cursor:pointer}
 <button class="toggle" onclick="toggleMode()">🌙</button>
 
 <script>
-let currentPostIndex = 0;
-
-const posts = [
-{
-title:"My First Blog",
-desc:"This is my university blog project.",
-content:"Full details of my first blog post...",
-img:"https://via.placeholder.com/600x300"
-},
-{
-title:"Learning Web Dev",
-desc:"Exploring modern UI.",
-content:"Full content about learning web development...",
-img:"https://via.placeholder.com/600x300"
-}
+const posts=[
+{title:"My First Blog",desc:"University project.",content:"Full blog content here...",img:"https://via.placeholder.com/600"},
+{title:"Learning Web Dev",desc:"Modern UI journey.",content:"Learning HTML CSS JS...",img:"https://via.placeholder.com/600"}
 ];
 
 function renderPosts(list=posts){
-let home="";
-let blog="";
-
+let home="",blog="";
 list.forEach((p,i)=>{
-let card=`<div class="card">
+let card=`<div class="card fade">
 <h3>${p.title}</h3>
 <p>${p.desc}</p>
 <img src="${p.img}">
 <button onclick="openPost(${i})">Read More</button>
 </div>`;
-
-home+=card;
-blog+=card;
+home+=card;blog+=card;
 });
-
 document.getElementById("homePosts").innerHTML=home;
 document.getElementById("blogPosts").innerHTML=blog;
 }
 
 function openPost(i){
-currentPostIndex=i;
 document.getElementById("postTitle").innerText=posts[i].title;
 document.getElementById("postContent").innerText=posts[i].content;
 document.getElementById("postImg").src=posts[i].img;
-document.getElementById("comments").innerHTML="";
-showPage('postView');
+showPage(null,'postView');
 }
 
-function addComment(){
-let text=document.getElementById("commentInput").value;
-if(text==="") return;
-let div=document.createElement("div");
-div.className="card";
-div.innerText=text;
-document.getElementById("comments").appendChild(div);
-document.getElementById("commentInput").value="";
+function searchPosts(v){
+let f=posts.filter(p=>p.title.toLowerCase().includes(v.toLowerCase()));
+renderPosts(f);
 }
 
-function searchPosts(value){
-let filtered=posts.filter(p=>p.title.toLowerCase().includes(value.toLowerCase()));
-renderPosts(filtered);
-}
-
-function showPage(id){
+function showPage(e,id){
 document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
 document.getElementById(id).classList.add('active');
+if(e){document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));e.target.classList.add('active');}
 }
 
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-
-function toggleSidebar(){
-document.getElementById("sidebar").classList.toggle("hide");
-document.getElementById("main").classList.toggle("full");
-}
+function toggleMode(){document.body.classList.toggle("light")}
+function toggleSidebar(){document.getElementById("sidebar").classList.toggle("hide");document.getElementById("main").classList.toggle("full")}
 
 renderPosts();
 </script>
