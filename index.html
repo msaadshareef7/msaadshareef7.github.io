@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCanvas | Portfolio</title>
+<title>CodeCanvas | Pro Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{display:flex;background:#0f172a;color:white}
+body{display:flex;background:#0f172a;color:white;transition:.3s}
 
-.sidebar{width:240px;height:100vh;background:#020617;padding:20px;position:fixed;left:0;top:0;transition:.3s}
+.sidebar{width:240px;height:100vh;background:#020617;padding:20px;position:fixed;left:0;top:0;transition:.3s;z-index:1000}
 .sidebar.hide{left:-240px}
 .sidebar h2{text-align:center;color:#00f2fe;margin-bottom:20px}
 .sidebar a{display:block;padding:10px;border-radius:8px;margin:5px 0;cursor:pointer}
 .sidebar a:hover,.sidebar a.active{background:#00f2fe;color:black}
 
-.menu-btn{position:fixed;top:10px;left:10px;background:#00f2fe;border:none;padding:10px;border-radius:6px;cursor:pointer;z-index:1000}
+.menu-btn{position:fixed;top:10px;left:10px;background:#00f2fe;border:none;padding:10px;border-radius:6px;cursor:pointer;z-index:1100}
 
 .main{margin-left:240px;padding:30px;width:100%;transition:.3s}
 .main.full{margin-left:0}
@@ -26,11 +26,11 @@ body{display:flex;background:#0f172a;color:white}
 .card{background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;margin:20px 0}
 .card img{width:100%;border-radius:10px;margin-top:10px}
 
-.sub{display:none;margin-top:10px}
-
 button{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#00f2fe;color:black;cursor:pointer}
 
 .search{padding:10px;width:100%;border-radius:8px;margin:10px 0;border:none}
+
+.sub{display:none;margin-top:10px}
 
 .toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%}
 
@@ -41,96 +41,58 @@ button{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#00f
 </head>
 
 <body>
-
 <button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
 <div class="sidebar" id="sidebar">
 <h2>🚀 CodeCanvas</h2>
 <a onclick="showPage(event,'home')" class="active">Home</a>
-<a onclick="showPage(event,'post')">My Journey</a>
+<a onclick="showPage(event,'journey')">My Journey</a>
 <a onclick="showPage(event,'about')">About Me</a>
 <a onclick="showPage(event,'contact')">Contact</a>
 </div>
 
 <div class="main" id="main">
 
-<!-- HOME -->
 <div id="home" class="page active">
 <h1>Welcome 👋</h1>
-<input class="search" placeholder="Search sections..." onkeyup="search(this.value)">
+<input class="search" placeholder="Search..." onkeyup="search(this.value)">
 <div class="card">
-<h2 onclick="toggle(this)">My University Journey</h2>
-<div class="sub">
-<p>Click below to read full story</p>
-<button onclick="showPage(null,'post')">Read Full Story</button>
-</div>
+<h2>My University Journey</h2>
+<p>Click to explore full structured story</p>
+<button onclick="showPage(null,'journey')">Read Full Story</button>
 </div>
 </div>
 
-<!-- JOURNEY -->
-<div id="post" class="page">
+<div id="journey" class="page">
 <button onclick="showPage(null,'home')">⬅ Back</button>
-
-<div class="card">
-<h2 onclick="toggle(this)">1. First Day of University</h2>
-<div class="sub">
-<h4>Expectations</h4><p>I had big dreams and excitement for engineering journey.</p>
-<img src="https://source.unsplash.com/800x400/?university">
-<h4>Teachers</h4><p>Teachers were supportive and motivating.</p>
-<img src="https://source.unsplash.com/800x400/?classroom">
-<h4>Admission</h4><p>Got admission in UET Lahore Faisalabad Campus (first batch).</p>
-<img src="https://source.unsplash.com/800x400/?campus">
-</div>
+<div id="content"></div>
 </div>
 
-<div class="card">
-<h2 onclick="toggle(this)">2. Hostel Life</h2>
-<div class="sub">
-<h4>Living</h4><p>Hall with 17 students. Best friend Usman Ali and Fakhar Abbas.</p>
-<img src="https://source.unsplash.com/800x400/?hostel">
-<h4>Problems</h4><p>Mess food and routine issues.</p>
-<img src="https://source.unsplash.com/800x400/?cafeteria">
-<h4>Interaction</h4><p>Initially low but improved with time.</p>
-<img src="https://source.unsplash.com/800x400/?friends">
-</div>
-</div>
-
-<div class="card">
-<h2 onclick="toggle(this)">3. First Week</h2>
-<div class="sub">
-<h4>Lectures</h4><p>Started programming fundamentals (Python).</p>
-<img src="https://source.unsplash.com/800x400/?coding">
-<h4>Friends</h4><p>Fakhar Abbas, Ahmad Raza, Adil Hassan.</p>
-<img src="https://source.unsplash.com/800x400/?friends,students">
-<h4>Group Study</h4><p>Helpful for understanding concepts.</p>
-<img src="https://source.unsplash.com/800x400/?study,group">
-</div>
-</div>
-
-<!-- ABOUT -->
 <div id="about" class="page">
 <h2>About Me</h2>
 <div class="card">
 <p>Name: M Saad Ali</p>
 <p>Father Name: M Shareef</p>
-<p>From: Village 15EB, Arifwala, Pakpattan</p>
-<p>Matric: 976/1100 Govt High School Arifwala</p>
-<p>ICS: 950/1200 Govt Degree College Arifwala</p>
-<p>University: UET Lahore Faisalabad Campus</p>
-<p>Currently: 2nd Semester (Mid exams ahead)</p>
+<p>Village: 15EB, Arifwala, Pakpattan</p>
+<p>Matric: 976/1100</p>
+<p>ICS: 950/1200</p>
+<p>UET Lahore Faisalabad Campus</p>
+<p>2nd Semester (Mids ahead)</p>
 </div>
-
 <div class="card">
 <h3>Hobbies</h3>
-<p>Crafting, Painting, Art, Cooking, Chess</p>
+<p>Crafting 🎨</p>
+<p>Painting 🖌️</p>
+<p>Art 🎭</p>
+<p>Cooking 🍳</p>
+<p>Chess ♟️</p>
 </div>
 </div>
 
-<!-- CONTACT -->
 <div id="contact" class="page">
-<h2>Contact Me</h2>
+<h2>Contact</h2>
 <div class="card">
-<p>📧 Email: msaadshareef7@gmail.com</p>
+<p>📧 msaadshareef7@gmail.com</p>
 <p>📸 Instagram: codedrifter</p>
 <p>📱 WhatsApp: 03069821021</p>
 <p>📞 Phone: 03040455975</p>
@@ -142,15 +104,48 @@ button{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#00f
 <button class="toggle" onclick="toggleMode()">🌙</button>
 
 <script>
-function toggle(el){
-let sub=el.nextElementSibling;
-sub.style.display=sub.style.display==='block'?'none':'block';
+const journeyData = [
+{
+title:"1. First Day of University",
+subs:[
+{"t":"Expectations","d":"High dreams of becoming engineer","img":"https://source.unsplash.com/800x400/?university"},
+{"t":"Teachers","d":"Supportive and motivating","img":"https://source.unsplash.com/800x400/?classroom"},
+{"t":"Admission","d":"UET Faisalabad first batch","img":"https://source.unsplash.com/800x400/?campus"}
+]
+},
+{
+title:"2. Hostel Life",
+subs:[
+{"t":"Living","d":"17 students hall, Usman Ali & Fakhar Abbas","img":"https://source.unsplash.com/800x400/?hostel"},
+{"t":"Mess","d":"Food and routine issues","img":"https://source.unsplash.com/800x400/?food"},
+{"t":"Interaction","d":"Low at start but improved","img":"https://source.unsplash.com/800x400/?friends"}
+]
+}
+];
+
+function render(){
+let html="";
+journeyData.forEach((sec,i)=>{
+html+=`<div class='card'>
+<h2 onclick='toggle(this)'>${sec.title}</h2>
+<div class='sub'>`;
+sec.subs.forEach(s=>{
+html+=`<h4>${s.t}</h4><p>${s.d}</p><img src='${s.img}'>`;
+});
+html+=`</div></div>`;
+});
+document.getElementById("content").innerHTML=html;
 }
 
-function search(val){
-val=val.toLowerCase();
+function toggle(el){
+let s=el.nextElementSibling;
+s.style.display=s.style.display==='block'?'none':'block';
+}
+
+function search(v){
+v=v.toLowerCase();
 document.querySelectorAll('.card').forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(val)?'block':'none';
+c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none';
 });
 }
 
@@ -162,6 +157,8 @@ if(e){document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('act
 
 function toggleMode(){document.body.classList.toggle("light")}
 function toggleSidebar(){document.getElementById("sidebar").classList.toggle("hide");document.getElementById("main").classList.toggle("full")}
+
+render();
 </script>
 
 </body>
