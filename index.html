@@ -106,19 +106,83 @@ button{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#00f
 <script>
 const journeyData = [
 {
-title:"1. First Day of University",
+title:"🎓 1. First Day of University",
 subs:[
-{"t":"Expectations","d":"High dreams of becoming engineer","img":"https://source.unsplash.com/800x400/?university"},
-{"t":"Teachers","d":"Supportive and motivating","img":"https://source.unsplash.com/800x400/?classroom"},
-{"t":"Admission","d":"UET Faisalabad first batch","img":"https://source.unsplash.com/800x400/?campus"}
+{t:"🌟 Expectations & Dreams", d:"I entered university with high expectations and dreams of becoming a skilled computer engineer. I was excited to explore new technologies, programming, and practical learning. Being part of engineering felt like stepping into a new life journey.", img:"https://source.unsplash.com/800x400/?university,students"},
+{t:"👨‍🏫 Interaction with Teachers", d:"Teachers were very supportive and guided us about university life. They explained course outlines and future opportunities. My first interaction built confidence and motivation.", img:"https://source.unsplash.com/800x400/?classroom,teacher"},
+{t:"🏫 Admission & Pride", d:"I got admission in UET Lahore Faisalabad Campus in Computer Engineering. It was the first batch, which made it more special. I felt proud to be part of something new and historic.", img:"https://source.unsplash.com/800x400/?campus,university"}
 ]
 },
 {
-title:"2. Hostel Life",
+title:"🏠 2. Hostel Life & Problems",
 subs:[
-{"t":"Living","d":"17 students hall, Usman Ali & Fakhar Abbas","img":"https://source.unsplash.com/800x400/?hostel"},
-{"t":"Mess","d":"Food and routine issues","img":"https://source.unsplash.com/800x400/?food"},
-{"t":"Interaction","d":"Low at start but improved","img":"https://source.unsplash.com/800x400/?friends"}
+{t:"🛏️ Living in Hostel Hall", d:"I was allocated a big hall with 17 students. My best hostel friend is Usman Ali and also Fakhar Abbas. It was crowded but also a new experience. Adjusting to shared space was challenging.", img:"https://source.unsplash.com/800x400/?hostel,room"},
+{t:"🍽️ Mess & Daily Problems", d:"Mess food quality was not always good. Timing and cleanliness were issues. It was difficult to manage routine.", img:"https://source.unsplash.com/800x400/?cafeteria,food"},
+{t:"🤝 Low Interaction Initially", d:"Initially, I had low interaction with roommates. Everyone was new and shy. Slowly, communication improved.", img:"https://source.unsplash.com/800x400/?students,friends"}
+]
+},
+{
+title:"📚 3. First Week Experience",
+subs:[
+{t:"📖 Lectures & Labs Start", d:"Classes and labs started immediately. Learned basics of Programming Fundamentals (Python). Labs helped understand concepts practically.", img:"https://source.unsplash.com/800x400/?coding,students"},
+{t:"👬 Making Friends", d:"I made great friends: Fakhar Abbas, Ahmad Raza, Adil Hassan. We supported each other in studies. Friendship made university life enjoyable.", img:"https://source.unsplash.com/800x400/?friends,university"},
+{t:"📖 Group Study", d:"We studied together regularly. Group discussions improved understanding. It helped in assignments and exams.", img:"https://source.unsplash.com/800x400/?group,study"}
+]
+},
+{
+title:"📝 4. Mid-Term Exams",
+subs:[
+{t:"📚 Preparation Time", d:"Preparation was tough due to tight schedule. No free day between exams. Required consistent focus.", img:"https://source.unsplash.com/800x400/?study,night"},
+{t:"⏱️ Exam Experience", d:"Each paper was 90 minutes. Papers were scheduled daily. It tested time management.", img:"https://source.unsplash.com/800x400/?exam,students"},
+{t:"🏆 Performance", d:"Programming Fundamentals and Calculus were easy for me. I scored full marks in these subjects. It boosted my confidence.", img:"https://source.unsplash.com/800x400/?success,student"}
+]
+},
+{
+title:"🔬 5. After Mids Life",
+subs:[
+{t:"📊 Assignments & Quizzes", d:"Weekly assignments and quizzes started. Required regular study habits. Improved discipline.", img:"https://source.unsplash.com/800x400/?assignment,study"},
+{t:"🧪 Labs Experience", d:"Labs like AICT and Physics were interesting. Spent around 3 hours in labs. Did practical work in groups.", img:"https://source.unsplash.com/800x400/?lab,experiment"},
+{t:"😊 Learning & Growth", d:"Felt happiness when experiments worked. Learned from failures. Saw improvement in skills.", img:"https://source.unsplash.com/800x400/?learning,success"}
+]
+},
+{
+title:"♟️ 6. Interest in Sports",
+subs:[
+{t:"🎯 Indoor Games Preference", d:"I prefer indoor games more than outdoor. They improve focus and thinking.", img:"https://source.unsplash.com/800x400/?indoor,games"},
+{t:"♟️ Chess Passion", d:"Chess is my favorite game. Helps in strategic thinking.", img:"https://source.unsplash.com/800x400/?chess"},
+{t:"🏆 Department Participation", d:"Participated in departmental chess competition and achieved good scores.", img:"https://source.unsplash.com/800x400/?competition,chess"}
+]
+},
+{
+title:"🤖 7. Machine Learning Project",
+subs:[
+{t:"📊 Project Idea", d:"Selected Loan Approval Dataset and focused on prediction based on features.", img:"https://source.unsplash.com/800x400/?data,analysis"},
+{t:"💻 Model Development", d:"Built model using Python with features like salary, marital status, and loan history.", img:"https://source.unsplash.com/800x400/?python,coding"},
+{t:"🎤 Presentation", d:"Presented project confidently, explained model, and got appreciation.", img:"https://source.unsplash.com/800x400/?presentation,student"}
+]
+},
+{
+title:"🏁 8. Final Exams & Result",
+subs:[
+{t:"📖 Preparation", d:"Final exams required deep preparation and full syllabus coverage.", img:"https://source.unsplash.com/800x400/?study,exam"},
+{t:"📝 Exams", d:"Exams were challenging but managed time effectively.", img:"https://source.unsplash.com/800x400/?exam,hall"},
+{t:"🏆 Result & Holidays", d:"Got 1st position in whole department with GPA 3.941/4. Enjoyed 15 days holidays.", img:"https://source.unsplash.com/800x400/?success,award"}
+]
+},
+{
+title:"📘 9. Second Semester Life",
+subs:[
+{t:"📚 Subjects & Learning", d:"Subjects include OOP (C#), DBMS, DLD, Calculus II, Communication Skills. Learned programming, databases and circuits.", img:"https://source.unsplash.com/800x400/?programming,lab"},
+{t:"👬 Friends & Hostel Life", d:"Met friends like Usman Ali. Strong bonding with classmates and roommates.", img:"https://source.unsplash.com/800x400/?friends,hostel"},
+{t:"💻 Focus on DBMS", d:"Learned database design and SQL queries. Lab work improved understanding.", img:"https://source.unsplash.com/800x400/?database,sql"}
+]
+},
+{
+title:"⚔️ 10. Online Classes Phase",
+subs:[
+{t:"🌍 Situation & Shift", d:"Due to petrol issues, classes shifted online creating a new learning environment.", img:"https://source.unsplash.com/800x400/?online,class"},
+{t:"💻 Online Learning Challenges", d:"Less interaction, more effort required, and internet issues.", img:"https://source.unsplash.com/800x400/?online,study"},
+{t:"🏫 Return to University", d:"Returned for mid exams and felt happy. Offline learning is better.", img:"https://source.unsplash.com/800x400/?campus,students"}
 ]
 }
 ];
