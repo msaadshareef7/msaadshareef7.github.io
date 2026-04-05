@@ -2,6 +2,7 @@
 layout: post
 title: "First Week Experience"
 date: 2025-09-25
+order: 2
 ---
 
 ## Lectures and Labs
