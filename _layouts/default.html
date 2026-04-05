@@ -135,11 +135,11 @@ img {
 
 <body>
 
-<nav class="navbar">
-  <a href="/">Home</a>
-  <a href="/blog/">My Journey</a>
-  <a href="/about/">About</a>
-  <a href="/contact/">Contact</a>
+<nav class="custom-nav">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  <a href="{{ '/blog/' | relative_url }}">My Journey</a>
+  <a href="{{ '/about/' | relative_url }}">About</a>
+  <a href="{{ '/contact/' | relative_url }}">Contact</a>
 </nav>
 
 <div class="container fade">
