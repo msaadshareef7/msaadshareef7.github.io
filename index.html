@@ -3,227 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeCanvas | Pro Portfolio</title>
+<title>CodeCanvas | Portfolio</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-body{display:flex;background:#0f172a;color:white;transition:.3s}
+body{background:#0f172a;color:white}
 
-.sidebar{width:240px;height:100vh;background:#020617;padding:20px;position:fixed;left:0;top:0;transition:.3s;z-index:1000}
-.sidebar.hide{left:-240px}
-.sidebar h2{text-align:center;color:#00f2fe;margin-bottom:20px}
-.sidebar a{display:block;padding:10px;border-radius:8px;margin:5px 0;cursor:pointer}
-.sidebar a:hover,.sidebar a.active{background:#00f2fe;color:black}
+/* NAV */
+.nav{
+position:fixed;
+top:0;left:0;
+width:100%;
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
 
-.menu-btn{position:fixed;top:10px;left:10px;background:#00f2fe;border:none;padding:10px;border-radius:6px;cursor:pointer;z-index:1100}
+.menu-btn{
+font-size:22px;
+cursor:pointer;
+}
 
-.main{margin-left:240px;padding:30px;width:100%;transition:.3s}
-.main.full{margin-left:0}
+.sidebar{
+position:fixed;
+left:-220px;
+top:0;
+width:220px;
+height:100%;
+background:#020617;
+padding:20px;
+transition:.3s;
+}
+.sidebar.active{left:0}
+.sidebar a{
+display:block;
+padding:12px;
+margin:5px 0;
+cursor:pointer;
+font-weight:bold;
+}
+.sidebar a:hover{background:#00f2fe;color:black}
 
-.page{display:none}
-.page.active{display:block}
+/* HOME */
+.home{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
 
-.card{background:rgba(255,255,255,0.05);padding:20px;border-radius:15px;margin:20px 0}
-.card img{width:100%;border-radius:10px;margin-top:10px}
+h1{
+font-size:2.5rem;
+color:#00f2fe;
+margin-bottom:20px;
+}
 
-button{margin-top:10px;padding:8px;border:none;border-radius:6px;background:#00f2fe;color:black;cursor:pointer}
+.buttons button{
+padding:12px 20px;
+margin:10px;
+font-weight:bold;
+border:none;
+border-radius:8px;
+background:#00f2fe;
+cursor:pointer;
+}
 
-.search{padding:10px;width:100%;border-radius:8px;margin:10px 0;border:none}
+/* POSTS */
+.container{
+padding:80px 20px;
+max-width:900px;
+margin:auto;
+}
 
-.sub{display:none;margin-top:10px}
+.post-card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+margin:15px 0;
+border-radius:12px;
+cursor:pointer;
+}
 
-.toggle{position:fixed;bottom:20px;right:20px;background:#00f2fe;border:none;padding:12px;border-radius:50%}
+.post-card:hover{transform:scale(1.02)}
 
-.light{background:#f5f5f5;color:black}
-.light .card{background:white}
-.light .sidebar{background:#ddd}
+/* COMMENT BOX */
+.comment-box{
+margin-top:30px;
+padding:20px;
+background:#020617;
+border-radius:10px;
+}
+
+.comment-box input,
+.comment-box textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:6px;
+border:none;
+}
+
+.comment-box button{
+background:#00f2fe;
+padding:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.search{
+width:100%;
+padding:10px;
+margin-bottom:20px;
+border-radius:8px;
+border:none;
+}
+
 </style>
 </head>
 
 <body>
-<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<div class="nav">
+<div class="menu-btn" onclick="toggleSidebar()">☰</div>
+<div>CodeCanvas</div>
+</div>
 
 <div class="sidebar" id="sidebar">
-<h2>🚀 CodeCanvas</h2>
-<a onclick="showPage(event,'home')" class="active">Home</a>
-<a onclick="showPage(event,'journey')">My Journey</a>
-<a onclick="showPage(event,'about')">About Me</a>
-<a onclick="showPage(event,'contact')">Contact</a>
+<a href="/">Home</a>
+<a href="/blog.html">My Journey</a>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
 </div>
 
-<div class="main" id="main">
-
-<div id="home" class="page active">
-<h1>Welcome 👋</h1>
-<input class="search" placeholder="Search..." onkeyup="search(this.value)">
-<div class="card">
-<h2>My University Journey</h2>
-<p>Click to explore full structured story</p>
-<button onclick="showPage(null,'journey')">Read Full Story</button>
+<!-- HOME -->
+<div class="home">
+<h1 id="typing"></h1>
+<div class="buttons">
+<button onclick="location.href='/blog.html'">My Journey</button>
+<button onclick="location.href='/about.html'">About</button>
+<button onclick="location.href='/contact.html'">Contact</button>
 </div>
 </div>
-
-<div id="journey" class="page">
-<button onclick="showPage(null,'home')">⬅ Back</button>
-<div id="content"></div>
-</div>
-
-<div id="about" class="page">
-<h2>About Me</h2>
-<div class="card">
-<p>Name: M Saad Ali</p>
-<p>Father Name: M Shareef</p>
-<p>Village: 15EB, Arifwala, Pakpattan</p>
-<p>Matric: 976/1100</p>
-<p>ICS: 950/1200</p>
-<p>UET Lahore Faisalabad Campus</p>
-<p>2nd Semester (Mids ahead)</p>
-</div>
-<div class="card">
-<h3>Hobbies</h3>
-<p>Crafting 🎨</p>
-<p>Painting 🖌️</p>
-<p>Art 🎭</p>
-<p>Cooking 🍳</p>
-<p>Chess ♟️</p>
-</div>
-</div>
-
-<div id="contact" class="page">
-<h2>Contact</h2>
-<div class="card">
-<p>📧 msaadshareef7@gmail.com</p>
-<p>📸 Instagram: codedrifter</p>
-<p>📱 WhatsApp: 03069821021</p>
-<p>📞 Phone: 03040455975</p>
-</div>
-</div>
-
-</div>
-
-<button class="toggle" onclick="toggleMode()">🌙</button>
 
 <script>
-const journeyData = [
-{
-title:"🎓 1. First Day of University",
-subs:[
-{t:"🌟 Expectations & Dreams", d:"I entered university with high expectations and dreams of becoming a skilled computer engineer. I was excited to explore new technologies, programming, and practical learning. Being part of engineering felt like stepping into a new life journey.", img:"https://source.unsplash.com/800x400/?university,students"},
-{t:"👨‍🏫 Interaction with Teachers", d:"Teachers were very supportive and guided us about university life. They explained course outlines and future opportunities. My first interaction built confidence and motivation.", img:"https://source.unsplash.com/800x400/?classroom,teacher"},
-{t:"🏫 Admission & Pride", d:"I got admission in UET Lahore Faisalabad Campus in Computer Engineering. It was the first batch, which made it more special. I felt proud to be part of something new and historic.", img:"https://source.unsplash.com/800x400/?campus,university"}
-]
-},
-{
-title:"🏠 2. Hostel Life & Problems",
-subs:[
-{t:"🛏️ Living in Hostel Hall", d:"I was allocated a big hall with 17 students. My best hostel friend is Usman Ali and also Fakhar Abbas. It was crowded but also a new experience. Adjusting to shared space was challenging.", img:"https://source.unsplash.com/800x400/?hostel,room"},
-{t:"🍽️ Mess & Daily Problems", d:"Mess food quality was not always good. Timing and cleanliness were issues. It was difficult to manage routine.", img:"https://source.unsplash.com/800x400/?cafeteria,food"},
-{t:"🤝 Low Interaction Initially", d:"Initially, I had low interaction with roommates. Everyone was new and shy. Slowly, communication improved.", img:"https://source.unsplash.com/800x400/?students,friends"}
-]
-},
-{
-title:"📚 3. First Week Experience",
-subs:[
-{t:"📖 Lectures & Labs Start", d:"Classes and labs started immediately. Learned basics of Programming Fundamentals (Python). Labs helped understand concepts practically.", img:"https://source.unsplash.com/800x400/?coding,students"},
-{t:"👬 Making Friends", d:"I made great friends: Fakhar Abbas, Ahmad Raza, Adil Hassan. We supported each other in studies. Friendship made university life enjoyable.", img:"https://source.unsplash.com/800x400/?friends,university"},
-{t:"📖 Group Study", d:"We studied together regularly. Group discussions improved understanding. It helped in assignments and exams.", img:"https://source.unsplash.com/800x400/?group,study"}
-]
-},
-{
-title:"📝 4. Mid-Term Exams",
-subs:[
-{t:"📚 Preparation Time", d:"Preparation was tough due to tight schedule. No free day between exams. Required consistent focus.", img:"https://source.unsplash.com/800x400/?study,night"},
-{t:"⏱️ Exam Experience", d:"Each paper was 90 minutes. Papers were scheduled daily. It tested time management.", img:"https://source.unsplash.com/800x400/?exam,students"},
-{t:"🏆 Performance", d:"Programming Fundamentals and Calculus were easy for me. I scored full marks in these subjects. It boosted my confidence.", img:"https://source.unsplash.com/800x400/?success,student"}
-]
-},
-{
-title:"🔬 5. After Mids Life",
-subs:[
-{t:"📊 Assignments & Quizzes", d:"Weekly assignments and quizzes started. Required regular study habits. Improved discipline.", img:"https://source.unsplash.com/800x400/?assignment,study"},
-{t:"🧪 Labs Experience", d:"Labs like AICT and Physics were interesting. Spent around 3 hours in labs. Did practical work in groups.", img:"https://source.unsplash.com/800x400/?lab,experiment"},
-{t:"😊 Learning & Growth", d:"Felt happiness when experiments worked. Learned from failures. Saw improvement in skills.", img:"https://source.unsplash.com/800x400/?learning,success"}
-]
-},
-{
-title:"♟️ 6. Interest in Sports",
-subs:[
-{t:"🎯 Indoor Games Preference", d:"I prefer indoor games more than outdoor. They improve focus and thinking.", img:"https://source.unsplash.com/800x400/?indoor,games"},
-{t:"♟️ Chess Passion", d:"Chess is my favorite game. Helps in strategic thinking.", img:"https://source.unsplash.com/800x400/?chess"},
-{t:"🏆 Department Participation", d:"Participated in departmental chess competition and achieved good scores.", img:"https://source.unsplash.com/800x400/?competition,chess"}
-]
-},
-{
-title:"🤖 7. Machine Learning Project",
-subs:[
-{t:"📊 Project Idea", d:"Selected Loan Approval Dataset and focused on prediction based on features.", img:"https://source.unsplash.com/800x400/?data,analysis"},
-{t:"💻 Model Development", d:"Built model using Python with features like salary, marital status, and loan history.", img:"https://source.unsplash.com/800x400/?python,coding"},
-{t:"🎤 Presentation", d:"Presented project confidently, explained model, and got appreciation.", img:"https://source.unsplash.com/800x400/?presentation,student"}
-]
-},
-{
-title:"🏁 8. Final Exams & Result",
-subs:[
-{t:"📖 Preparation", d:"Final exams required deep preparation and full syllabus coverage.", img:"https://source.unsplash.com/800x400/?study,exam"},
-{t:"📝 Exams", d:"Exams were challenging but managed time effectively.", img:"https://source.unsplash.com/800x400/?exam,hall"},
-{t:"🏆 Result & Holidays", d:"Got 1st position in whole department with GPA 3.941/4. Enjoyed 15 days holidays.", img:"https://source.unsplash.com/800x400/?success,award"}
-]
-},
-{
-title:"📘 9. Second Semester Life",
-subs:[
-{t:"📚 Subjects & Learning", d:"Subjects include OOP (C#), DBMS, DLD, Calculus II, Communication Skills. Learned programming, databases and circuits.", img:"https://source.unsplash.com/800x400/?programming,lab"},
-{t:"👬 Friends & Hostel Life", d:"Met friends like Usman Ali. Strong bonding with classmates and roommates.", img:"https://source.unsplash.com/800x400/?friends,hostel"},
-{t:"💻 Focus on DBMS", d:"Learned database design and SQL queries. Lab work improved understanding.", img:"https://source.unsplash.com/800x400/?database,sql"}
-]
-},
-{
-title:"⚔️ 10. Online Classes Phase",
-subs:[
-{t:"🌍 Situation & Shift", d:"Due to petrol issues, classes shifted online creating a new learning environment.", img:"https://source.unsplash.com/800x400/?online,class"},
-{t:"💻 Online Learning Challenges", d:"Less interaction, more effort required, and internet issues.", img:"https://source.unsplash.com/800x400/?online,study"},
-{t:"🏫 Return to University", d:"Returned for mid exams and felt happy. Offline learning is better.", img:"https://source.unsplash.com/800x400/?campus,students"}
-]
-}
-];
-
-function render(){
-let html="";
-journeyData.forEach((sec,i)=>{
-html+=`<div class='card'>
-<h2 onclick='toggle(this)'>${sec.title}</h2>
-<div class='sub'>`;
-sec.subs.forEach(s=>{
-html+=`<h4>${s.t}</h4><p>${s.d}</p><img src='${s.img}'>`;
-});
-html+=`</div></div>`;
-});
-document.getElementById("content").innerHTML=html;
+function toggleSidebar(){
+document.getElementById('sidebar').classList.toggle('active');
 }
 
-function toggle(el){
-let s=el.nextElementSibling;
-s.style.display=s.style.display==='block'?'none':'block';
-}
-
-function search(v){
-v=v.toLowerCase();
-document.querySelectorAll('.card').forEach(c=>{
-c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none';
-});
-}
-
-function showPage(e,id){
-document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-if(e){document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));e.target.classList.add('active');}
-}
-
-function toggleMode(){document.body.classList.toggle("light")}
-function toggleSidebar(){document.getElementById("sidebar").classList.toggle("hide");document.getElementById("main").classList.toggle("full")}
-
-render();
+const text="Welcome to CodeCanvas - M Saad Ali";
+let i=0;
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,50);
+}}
+typing();
 </script>
 
 </body>
 </html>
+
+<!-- BLOG PAGE (blog.html) -->
+<!-- USE THIS FILE SEPARATELY -->
+
+<!--
+---
+layout: default
+---
+
+<input class="search" placeholder="Search posts...">
+
+{% for post in site.posts %}
+<div class="post-card" onclick="location.href='{{ post.url }}'">
+<h2>{{ post.title }}</h2>
+<p>{{ post.excerpt }}</p>
+</div>
+{% endfor %}
+-->
+
+<!-- POST PAGE TEMPLATE -->
+<!--
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+{{ content }}
+
+<div class="comment-box">
+<h3>Comments</h3>
+<input placeholder="Your Name">
+<textarea placeholder="Write comment..."></textarea>
+<button>Post Comment</button>
+</div>
+-->
+
+<!-- ABOUT PAGE (about.html) -->
+<!--
+<h2>About Me</h2>
+<p>Name: M Saad Ali</p>
+<p>Father: M Shareef</p>
+<p>Village: 15EB, Arifwala, Pakpattan</p>
+<p>Matric: 976/1100</p>
+<p>ICS: 950/1200</p>
+<p>UET Lahore Faisalabad Campus</p>
+<p>Second Semester</p>
+-->
+
+<!-- CONTACT PAGE -->
+<!--
+<h2>Contact</h2>
+<p>Email: msaadshareef7@gmail.com</p>
+<p>Instagram: codedrifter</p>
+<p>WhatsApp: 03069821021</p>
+<p>Phone: 03040455975</p>
+-->
