@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hostel Life and Problems"
-date: 2025-10-01
+date: 2025-10-10
 ---
 
 ## Living in Hostel Hall
