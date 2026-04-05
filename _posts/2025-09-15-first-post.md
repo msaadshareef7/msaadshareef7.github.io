@@ -13,7 +13,7 @@ I entered university with strong ambitions of becoming a skilled computer engine
 # Interaction with Teachers
 ![image](/assets/images/first-day2.jpg)
 
-On the first day, teachers guided us about our academic journey. They explained course structures, expectations, and career opportunities. Their support created confidence and motivation within me.
+On the first day, teachers guided us about our academic journey. They explained course structures, expectations, and career opportunities  . Their support created confidence and motivation within me.
 
 # Admission and Pride
 ![image](/assets/images/first-day3.jpg)
