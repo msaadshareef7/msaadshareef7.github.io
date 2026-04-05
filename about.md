@@ -1,7 +1,7 @@
 ---
 layout: default
-titlt: About-Me
-permalik: /about/
+title: About-Me
+permalink: /about/
 ---
 
 <div class="about-container">
