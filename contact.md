@@ -1,3 +1,9 @@
+---
+layout: default
+title: Contact-Me
+permalink: /contact/
+---
+
 <div class="contact-container">
 
   <div class="contact-card">
