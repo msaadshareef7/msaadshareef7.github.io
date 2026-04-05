@@ -1,25 +1,46 @@
----
-layout: default
-title: About
-permalink: /about/
----
+<div class="about-container">
 
-# About Me
-Here I introduce myself....
+  <!-- PROFILE -->
+  <div class="profile-card">
+    <img src="/assets/images/profile.jpg" alt="Profile">
+    <h1>Muhammad Saad Ali</h1>
+    <p>Computer Engineering Student | UET Lahore (Faisalabad Campus)</p>
+  </div>
 
-My name is Muhammad Saad Ali. My father name is Muhammad Shareef. I am 18 years old. my date of Birth is 18-July-2008. I am from a village 15/EB , Teshsil Arifwala , District Pakpattan.
+  <!-- ABOUT -->
+  <div class="section-card">
+    <h2>About Me</h2>
+    <p>
+      I am Muhammad Saad Ali, an 18-year-old student passionate about technology
+      and learning. I belong to village 15/EB, Tehsil Arifwala, District Pakpattan.
+      I believe in continuous growth and self-improvement.
+    </p>
+  </div>
 
-Now I tell you about my education....
+  <!-- EDUCATION -->
+  <div class="section-card">
+    <h2>Education</h2>
+    <p>
+      I completed my Matriculation in 2023 from Govt. High School Arifwala with
+      976 marks in Biology. Later, I completed Intermediate in 2025 from Govt.
+      Degree College Arifwala in ICS with 950 marks.
+    </p>
+    <p>
+      Currently, I am studying Computer Engineering at UET Lahore (Faisalabad Campus).
+      I joined in September 2025 and I am now in my second semester.
+    </p>
+  </div>
 
-I did my Matriculation in 2023 from Govt. High School Arifwala. I done my matric with Biology and got 976 marks out of 1100.
+  <!-- HOBBIES -->
+  <div class="section-card">
+    <h2>Hobbies</h2>
+    <ul>
+      <li>Crafting</li>
+      <li>Painting</li>
+      <li>Art</li>
+      <li>Cooking</li>
+      <li>Chess</li>
+    </ul>
+  </div>
 
-I did my Intermediate in 2025 from Govt. Degree College Arifwala. I done my Inter with ICS (computer) and got 950 marks out of 1200.
-
-Currently I am studying in Computer Engineering at UET Lahore (Faisalabad Campus). i joined University on 15-sep-2025. Now I am in Second semester and mid exams ahead.
-
-## Hobbies
-- Crafting
-- Painting
-- Art
-- Cooking
-- Chess
+</div>
