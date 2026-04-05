@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Final Exams and Result"
-date: 2025-01-25
+date: 2026-01-25
 order: 8
 ---
 
