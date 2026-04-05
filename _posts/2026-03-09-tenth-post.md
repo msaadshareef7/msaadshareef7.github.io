@@ -2,20 +2,20 @@
 layout: post
 title: "Online Classes Phase"
 date: 2026-03-09
-order: 10
+order: 1
 ---
 
-## Situation
+# Situation
 ![image](/assets/images/online1.jpg)
 
 Due to petrol shortage, classes shifted online. This created a new learning environment.
 
-## Challenges
+# Challenges
 ![image](/assets/images/online2.jpg)
 
 Online classes had challenges like low interaction and internet issues.
 
-## Return to Campus
+# Return to Campus
 ![image](/assets/images/online3.jpg)
 
 Returning to university for exams felt refreshing. Physical classes are much more effective.
