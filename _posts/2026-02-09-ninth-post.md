@@ -2,6 +2,7 @@
 layout: post
 title: "Second Semester Life"
 date: 2026-02-09
+order: 9
 ---
 
 ## Subjects and Learning
