@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang }}">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+</head>
 
-{% include head.html %}
+<body>
 
-<header class="hover smooth">
-  {% unless site.show_minimal and site.navigation and site.external %}
-    <h1 {% if site.navigation and site.external %}class="full"{% endif %}><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h1>
-  {% endunless %}
-  {% include menu.html menu=site.navigation %}
-  {% include menu.html menu=site.external %}
-</header>
-<nav>
-  <a href="/">Home</a>
-  <a href="/blog/">My Journey</a>
-  <a href="/about/">About</a>
-  <a href="/contact/">Contact</a>
-</nav>
-{{ content }}
+  <!-- NAVBAR START -->
+  <nav style="background:#0f172a; padding:15px; text-align:center;">
+    <a href="/" style="margin:15px; color:white; text-decoration:none; font-weight:bold;">Home</a>
+    <a href="/blog/" style="margin:15px; color:white; text-decoration:none; font-weight:bold;">My Journey</a>
+    <a href="/about/" style="margin:15px; color:white; text-decoration:none; font-weight:bold;">About</a>
+    <a href="/contact/" style="margin:15px; color:white; text-decoration:none; font-weight:bold;">Contact</a>
+  </nav>
+  <!-- NAVBAR END -->
 
-{%- if site.footer -%}
-<footer class="hover">
-  <div>{{ site.description }}</div>
-  {% include menu.html menu=site.footer %}
-</footer>
-{%- endif -%}
+  {{ content }}
 
+</body>
 </html>
