@@ -6,8 +6,9 @@ order: 2
 ---
 
 ## Lectures and Labs
+<p align="center"/>
 ![image](/assets/images/week1.jpg)
-
+</p>
 Classes started immediately with Programming Fundamentals in Python. Lab sessions helped in understanding programming concepts practically.
 
 ## Making Friends
