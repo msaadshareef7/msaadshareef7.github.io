@@ -7,7 +7,7 @@ permalink: /about/
 
   <!-- PROFILE -- >
   <div class="profile-card">
-   <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile">
+   <img src="{{ '/assets/images/profile.png' | relative_url }}" alt="Profile">
     <h1>Muhammad Saad Ali</h1>
     <p>Computer Engineering Student | UET Lahore (Faisalabad Campus)</p>
   </div>
