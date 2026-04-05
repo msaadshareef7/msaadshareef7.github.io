@@ -1,3 +1,9 @@
+---
+layout: default
+titlt: About-Me
+permalik: /about/
+---
+
 <div class="about-container">
 
   <!-- PROFILE -->
