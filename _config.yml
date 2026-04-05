@@ -1,2 +1,7 @@
 title: My University Blog
+
+baseurl: "/msaadali7"
+<a href="{{ '/blog/' | relative_url }}">
+<a href="{{ '/about/' | relative_url }}">
+<a href="{{ '/contact/' | relative_url }}">
 theme: null
