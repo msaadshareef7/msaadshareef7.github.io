@@ -1,3 +1,5 @@
 title: My University Blog
-baseurl: ""
+baseurl: ""   # IMPORTANT (empty)
+url: "https://msaadshareef7.github.io"
+
 theme: null
