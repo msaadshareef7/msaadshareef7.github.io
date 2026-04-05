@@ -195,20 +195,45 @@ img {
 .profile-card {
   background: rgba(255,255,255,0.06);
   backdrop-filter: blur(15px);
-  padding: 30px;
+  padding: 40px 20px;
   border-radius: 20px;
   text-align: center;
   margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ✅ CENTER EVERYTHING */
+  justify-content: center;
 }
 
 /* PROFILE IMAGE */
 .profile-card img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #00f2fe;
+
+  display: block;
+  margin: 0 auto 15px auto;   /* ✅ PERFECT CENTER */
+
+  border: 4px solid #00f2fe;
+}
+
+  .profile-card img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* NAME */
+.profile-card h1 {
+  margin-top: 10px;
+  font-size: 32px;
+}
+
+/* SUBTEXT */
+.profile-card p {
+  color: #cbd5e1;
+  margin-top: 5px;
 }
 
 /* SECTION CARD */
