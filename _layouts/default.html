@@ -6,40 +6,50 @@
 
   <style>
     body {
-      margin:0;
-      font-family:Segoe UI;
-      background:#0f172a;
-      color:white;
+      background: #0f172a;
+      color: white;
+      font-family: Arial;
+      margin: 0;
     }
 
-    nav {
-      background:#020617;
-      padding:15px;
-      text-align:center;
+    .navbar {
+      background: #020617;
+      padding: 15px;
+      text-align: center;
     }
 
-    nav a {
-      margin:15px;
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-    }
-
-    nav a:hover {
-      color:#00f2fe;
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .container {
-      padding:40px;
+      padding: 30px;
+    }
+
+    .post-card {
+      background: #1e293b;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .search {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 
 <body>
 
-<nav>
+<nav class="navbar">
   <a href="/">Home</a>
-  <a href="/blog/">My Journey</a>
+  <a href="/my-journey/">My Journey</a>
   <a href="/about/">About</a>
   <a href="/contact/">Contact</a>
 </nav>
