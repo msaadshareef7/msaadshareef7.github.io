@@ -236,6 +236,26 @@ img {
   margin-top: 5px;
 }
 
+/* PROFILE IMAGE (PERFECT CIRCLE + FACE FOCUS) */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-image: url("{{ '/assets/images/profile.jpg' | relative_url }}");
+  background-size: cover;
+
+  /* 🔥 ADJUST THIS TO FOCUS FACE */
+  background-position: center 20%;
+
+  border: 4px solid #00f2fe;
+  margin-bottom: 15px;
+}
+
+  .profile-img {
+  box-shadow: 0 0 25px rgba(0,242,254,0.4);
+}
+  
 /* SECTION CARD */
 .section-card {
   background: rgba(255,255,255,0.05);
