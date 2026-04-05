@@ -1,13 +1,8 @@
----
-layout: default
-title: About-Me
-permalink: /about/
----
 <div class="about-container">
 
-  <!-- PROFILE -- >
+  <!-- PROFILE -->
   <div class="profile-card">
-    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Profile">
+    <img src="/assets/images/profile.jpg" alt="Profile">
     <h1>Muhammad Saad Ali</h1>
     <p>Computer Engineering Student | UET Lahore (Faisalabad Campus)</p>
   </div>
@@ -45,6 +40,7 @@ permalink: /about/
       <li>Art</li>
       <li>Cooking</li>
       <li>Chess</li>
+      <li>Coding</li>
     </ul>
   </div>
 
