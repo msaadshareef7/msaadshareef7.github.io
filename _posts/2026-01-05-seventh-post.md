@@ -2,6 +2,7 @@
 layout: post
 title: "Machine Learning Project"
 date: 2026-01-05
+order: 7
 ---
 
 ## Project Idea
