@@ -1,3 +1,8 @@
+---
+layout: defaut
+title: About-Me
+permalink: /about/
+---
 <div class="about-container">
 
   <!-- PROFILE -->
