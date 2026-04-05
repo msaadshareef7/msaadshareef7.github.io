@@ -1,6 +1,7 @@
 ---
 layout: default
 title: My Journey
+permalink: /my-journey/
 ---
 
 <input class="search" placeholder="Search posts...">
