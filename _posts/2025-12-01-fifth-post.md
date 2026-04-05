@@ -2,6 +2,7 @@
 layout: post
 title: "Life After Mids"
 date: 2025-12-01
+order: 5
 ---
 
 ## Assignments and Quizzes
