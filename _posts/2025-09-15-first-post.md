@@ -2,6 +2,7 @@
 layout: post
 title: "First Day of University"
 date: 2025-09-15
+order: 1
 ---
 
 ## Expectations and Dreams
