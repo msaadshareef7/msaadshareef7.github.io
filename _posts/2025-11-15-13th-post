@@ -1,0 +1,47 @@
+---
+title: " Advanced Database Concepts and Project Planning"
+date: 2025-11-05
+author: "M Saad Ali (2025-BSCPE-129)"
+tags: [Datbase, MySQL Queries, Python, AI, ML, Portfolio]
+---
+# Week 13 – Advanced Database Concepts and Project Planning
+
+## Introduction
+After the midterm examinations, our Database course entered a more advanced stage. Under the supervision of **Dr. Bilal Ahmad**, we started learning professional database concepts that are widely used in industry and research projects.
+
+## Advanced Topics Learned
+During this period, we studied:
+
+- Database Normalization
+- Functional Dependencies
+- Relational Algebra
+- Query Optimization
+- Database Integrity Constraints
+- Advanced Database Design Principles
+
+Dr. Bilal Ahmad explained how normalization helps eliminate redundancy and improves database consistency. We practiced converting datasets into properly structured database tables by applying normalization rules.
+
+## Project Introduction
+At the same time, **Dr. Bilal Ahmad** introduced our semester project. The project required us to combine database knowledge with machine learning concepts through a structured workflow.
+
+The project stages included:
+
+1. Selecting a real-world dataset with proper references.
+2. Designing and normalizing the dataset as a database.
+3. Applying database concepts and queries.
+4. Preparing data for machine learning.
+5. Developing an intelligent prediction system.
+
+This project highlighted the practical connection between databases and machine learning.
+
+## Reflection
+This week was highly valuable because it transformed theoretical database concepts into practical project requirements. The guidance of **Dr. Bilal Ahmad** helped us understand how professional projects are planned and executed step by step.
+
+## Resources
+- Dr. Bilal Ahmad (LinkedIn): https://www.linkedin.com/in/dr-bilal-ahmad
+- Dr. Bilal Ahmad (Facebook): https://www.facebook.com/drbilalahmad
+
+## Tags
+#Database #Normalization #RelationalAlgebra #MachineLearning #Portfolio #ComputerEngineering #DrBilalAhmad
+
+**Mentor:** Dr. Bilal Ahmad
