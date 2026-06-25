@@ -1,5 +1,5 @@
 title: My University Blog
-baseurl: ""   # IMPORTANT (empty)
+baseurl: "/blog"   # IMPORTANT (empty)
 url: "https://msaadshareef7.github.io"
 
 theme: null
