@@ -1,0 +1,122 @@
+---
+title: "Variables, Data Types and Operators in Python"
+date: 2025-09-10
+author: "M Saad Ali (2025-BSCPE-129)"
+tags: [Python, Variables, Data Types]
+---
+
+# Variables, Data Types and Operators in Python
+
+## Introduction
+
+After learning basic syntax, we moved toward variables, data types, and operators.
+
+These concepts form the foundation of every programming language.
+
+## Variables
+
+Variables act as containers for storing information.
+
+Example:
+
+```python
+student_name = "Saad"
+semester = 1
+```
+
+## Rules for Variables
+
+- Cannot start with numbers
+- No spaces allowed
+- Case-sensitive
+- Meaningful names preferred
+
+Example:
+
+```python
+total_marks = 100
+```
+
+## Data Types
+
+### Integer
+
+```python
+age = 18
+```
+
+### Float
+
+```python
+cgpa = 3.65
+```
+
+### String
+
+```python
+name = "Saad"
+```
+
+### Boolean
+
+```python
+is_present = True
+```
+
+## Operators
+
+### Arithmetic Operators
+
+```python
+a = 10
+b = 5
+
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+```
+
+### Comparison Operators
+
+```python
+print(a > b)
+print(a < b)
+```
+
+### Logical Operators
+
+```python
+x = True
+y = False
+
+print(x and y)
+print(x or y)
+```
+
+## Real-Life Applications
+
+Operators are used in:
+
+- Calculators
+- Banking systems
+- Student management systems
+- Data analysis
+
+## Reflection
+
+Understanding variables and operators allowed us to write meaningful programs instead of simple print statements.
+
+---
+
+## References
+
+- Python Documentation
+- PF Notes
+- Dr. Bilal Ahmad Lectures
+
+## Tags
+
+#Variables #Python #ProgrammingFundamentals
+
+@DrBilalAhmad
