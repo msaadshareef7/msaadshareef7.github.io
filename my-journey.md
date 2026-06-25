@@ -6,17 +6,17 @@ permalink: /my-journey/
 
 <div class="journey-container">
 
-    <a href="/whole-journey/" class="journey-card">
+    <h2>📚 <a href="{{ site.baseurl }}/whole-journey/">My Whole Journey</a></h2>
         <h2>📚 My Whole Journey</h2>
         <p>All posts from Semester 1 and Semester 2</p>
     </a>
 
-    <a href="/first-semester/" class="journey-card">
+    <h2>🎓 <a href="{{ site.baseurl }}/first-semester/">First Semester</a></h2>
         <h2>🎓 First Semester</h2>
         <p>Posts 1 - 10</p>
     </a>
 
-    <a href="/second-semester/" class="journey-card">
+    <h2>🚀 <a href="{{ site.baseurl }}/second-semester/">Second Semester</a></h2>
         <h2>🚀 Second Semester</h2>
         <p>Posts 11 - 15</p>
     </a>
