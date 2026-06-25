@@ -1,0 +1,107 @@
+---
+title: "Learning Python Fundamentals"
+date: 2025-09-05
+author: "M Saad Ali (2025-BSCPE-129)"
+tags: [Python, Programming Fundamentals]
+---
+
+# Learning Python Fundamentals
+
+## Introduction
+
+During the initial weeks of Programming Fundamentals, we started learning Python programming under the supervision of Dr. Bilal Ahmad.
+
+Python is known for its simplicity and readability, making it an excellent language for beginners.
+
+## Why Python is Popular
+
+Some reasons behind Python's popularity include:
+
+- Easy syntax
+- Large community support
+- Extensive libraries
+- Cross-platform compatibility
+- Applications in AI and ML
+
+## First Python Program
+
+One of the first programs we executed was:
+
+```python
+print("Hello World")
+```
+
+This simple statement introduced us to:
+
+- Program execution
+- Syntax
+- Output generation
+
+## Core Concepts Learned
+
+### Variables
+
+Variables store information.
+
+Example:
+
+```python
+name = "Saad"
+age = 18
+```
+
+### Data Types
+
+Python supports:
+
+- Integer
+- Float
+- String
+- Boolean
+
+Example:
+
+```python
+roll_no = 129
+cgpa = 3.5
+name = "Saad"
+is_student = True
+```
+
+### Input and Output
+
+Example:
+
+```python
+name = input("Enter Name: ")
+print(name)
+```
+
+## Importance of Fundamentals
+
+Dr. Bilal Ahmad emphasized understanding concepts instead of memorizing code.
+
+Strong fundamentals help in:
+
+- Debugging
+- Software development
+- Problem solving
+- Machine learning
+
+## Reflection
+
+Learning Python fundamentals was exciting because it transformed computers from something I only used into something I could instruct and control through code.
+
+---
+
+## References
+
+- Python Official Documentation
+- PF Lecture Slides
+- Class Notes
+
+## Tags
+
+#Python #Programming #LearningJourney
+
+@DrBilalAhmad
