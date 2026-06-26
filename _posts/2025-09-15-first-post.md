@@ -19,3 +19,6 @@ On the first day, teachers guided us about our academic journey. They explained 
 ![image](/assets/images/first-day3.jpg)
 
 I got admission in UET Lahore Faisalabad Campus in Computer Engineering. Being part of the first batch made it even more special. I felt proud to represent a new beginning.
+
+#DrBilalAhmad
+@DrBilalAhmad
