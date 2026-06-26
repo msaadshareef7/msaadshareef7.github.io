@@ -20,5 +20,10 @@ Online classes had challenges like low interaction and internet issues.
 
 Returning to university for exams felt refreshing. Physical classes are much more effective.
 
+In online classes session Sir Dr Bilal Ahmad also share his knowldege by his Social media flatform like:
+-Linkedin link [Dr. Bilal Ahmad](https://www.linkedin.com/in/drbilalphd/)
+-Facebook link [Dr. Bilal Ahmad](https://www.facebook.com/Dr.BilalAhm)
+-Google Scholar link [Dr. Bilal Ahmad's Google Scholar](https://scholar.google.com.au/citations?user=8nZ0jVkAAAAJ&hl=en)
+
 #DrBilalAhmad
 @DrBilalAhmad
