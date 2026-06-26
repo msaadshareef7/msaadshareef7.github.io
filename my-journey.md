@@ -3,7 +3,7 @@
 layout: default
 title: My Journey
 permalink: /my-journey/
------------------------
+---
 
 # My Journey
 
