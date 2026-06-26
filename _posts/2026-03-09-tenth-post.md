@@ -2,7 +2,7 @@
 layout: post
 title: "Online Classes Phase"
 date: 2026-03-09
-order: 1
+order: 10
 ---
 
 # Situation
@@ -19,3 +19,6 @@ Online classes had challenges like low interaction and internet issues.
 ![image](/assets/images/online3.jpg)
 
 Returning to university for exams felt refreshing. Physical classes are much more effective.
+
+#DrBilalAhmad
+@DrBilalAhmad
